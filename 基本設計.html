@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="目次.html">目次</a></li><li class="chapter-item expanded affix "><a href="V字モデル.html">V字モデルとは</a></li><li class="chapter-item expanded "><a href="要求定義.html"><strong aria-hidden="true">1.</strong> 要求定義とは</a></li><li class="chapter-item expanded "><a href="要件定義.html"><strong aria-hidden="true">2.</strong> 要件定義とは</a></li><li class="chapter-item expanded "><a href="基本設計.html" class="active"><strong aria-hidden="true">3.</strong> 基本設計</a></li><li class="chapter-item expanded "><a href="詳細設計.html"><strong aria-hidden="true">4.</strong> 詳細設計</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="目次.html">目次</a></li><li class="chapter-item expanded affix "><a href="V字モデル.html">V字モデルとは</a></li><li class="chapter-item expanded "><a href="要求定義.html"><strong aria-hidden="true">1.</strong> 要求定義とは</a></li><li class="chapter-item expanded "><a href="要件定義.html"><strong aria-hidden="true">2.</strong> 要件定義とは</a></li><li class="chapter-item expanded "><a href="基本設計.html" class="active"><strong aria-hidden="true">3.</strong> 基本設計</a></li><li class="chapter-item expanded "><a href="詳細設計.html"><strong aria-hidden="true">4.</strong> 詳細設計</a></li><li class="chapter-item expanded "><a href="コーディング.html"><strong aria-hidden="true">5.</strong> コーディング</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -133,20 +133,28 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#基本設計とは" id="基本設計とは">基本設計とは</a></h1>
-<p>要件定義をもとに、UI（ユーザーインターフェース）などの外側から見たシステムを設計するフェーズで。基本設計で行う作業内容は以下の通りです。</p>
+<p>要件定義をもとに、UI（ユーザーインターフェース）などの外側から見たシステムを設計する,内部のシステムを設計するフェーズで、基本設計で行う作業内容は以下の通りです。</p>
 <p><a href="https://anken-hyouban.com/blog/2019/11/20/basic-design/">参考資料</a></p>
-<p>・機能の洗い出し</p>
+<h3><a class="header" href="#機能の洗い出し詳細決定" id="機能の洗い出し詳細決定">機能の洗い出し、詳細決定</a></h3>
+<img src="./img/詳細決定001.png">
+<img src="./img/詳細決定002.png">
 <blockquote>
-<p>要件定義でリスト化した機能の詳細まで決定する。例:アーカイブを難易度順に10個表示</p>
+<p>実際に作る時に必要なシステムの詳細を決める。例:アーカイブを難易度順に10個表示</p>
 </blockquote>
-<p>・扱うデータを整理</p>
+<blockquote>
+<p>function毎にプログラムの実際の処理の流れ、プログラムで扱うデータや流れを決める</p>
+</blockquote>
+<h3><a class="header" href="#扱うデータを整理" id="扱うデータを整理">扱うデータを整理</a></h3>
 <p>1.必要なデータをリスト化する</p>
+<img src="./img/DB設計001.png" height="200px">
 <p>2.tableに落とし込み</p>
+<img src="./img/DB設計002.png" height="400px">
 <p>3.データフロー図の作成</p>
-<img src="./img/データフロー図.png" height="500px">
+<img src="./img/DB設計003.png" height="500px">
 <p>4.各画面毎にDBから表示されるデータと、DBに送信するデータの見える化</p>
-<img src="./img/sample001.png" height="500px">
-<p>・画面のレイアウトを決める</p>
+<img src="./img/DB設計004.png" height="500px">
+<h3><a class="header" href="#画面のレイアウトを決める" id="画面のレイアウトを決める">画面のレイアウトを決める</a></h3>
+<img src="./img/レイアウト.png" height="500px">
 <blockquote>
 <p>アニメーション、ボタンを押した時の挙動、リンク、メニューの中身、ページのタイトル、文字の配置、アイコンの配置などを決定！</p>
 </blockquote>

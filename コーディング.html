@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>要件定義とは - start up</title>
+        <title>コーディング - start up</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="目次.html">目次</a></li><li class="chapter-item expanded affix "><a href="V字モデル.html">V字モデルとは</a></li><li class="chapter-item expanded "><a href="要求定義.html"><strong aria-hidden="true">1.</strong> 要求定義とは</a></li><li class="chapter-item expanded "><a href="要件定義.html" class="active"><strong aria-hidden="true">2.</strong> 要件定義とは</a></li><li class="chapter-item expanded "><a href="基本設計.html"><strong aria-hidden="true">3.</strong> 基本設計</a></li><li class="chapter-item expanded "><a href="詳細設計.html"><strong aria-hidden="true">4.</strong> 詳細設計</a></li><li class="chapter-item expanded "><a href="コーディング.html"><strong aria-hidden="true">5.</strong> コーディング</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="目次.html">目次</a></li><li class="chapter-item expanded affix "><a href="V字モデル.html">V字モデルとは</a></li><li class="chapter-item expanded "><a href="要求定義.html"><strong aria-hidden="true">1.</strong> 要求定義とは</a></li><li class="chapter-item expanded "><a href="要件定義.html"><strong aria-hidden="true">2.</strong> 要件定義とは</a></li><li class="chapter-item expanded "><a href="基本設計.html"><strong aria-hidden="true">3.</strong> 基本設計</a></li><li class="chapter-item expanded "><a href="詳細設計.html"><strong aria-hidden="true">4.</strong> 詳細設計</a></li><li class="chapter-item expanded "><a href="コーディング.html" class="active"><strong aria-hidden="true">5.</strong> コーディング</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -132,79 +132,50 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#要件定義とは" id="要件定義とは">要件定義とは</a></h1>
-<p>クライアントのニーズである要求定義を、開発するシステムでどのように実現していくか？必要な要件をまとめたもの。</p>
-<img src="./img/要件定義.png">
-<p>・開発目的</p>
-<p>・予算</p>
-<p>・必要な機能</p>
-<p>・スケジュール（納期）</p>
-<p>・必要な人員（工数）</p>
-<h2><a class="header" href="#手順書" id="手順書">手順書</a></h2>
-<h3><a class="header" href="#1ページ毎にやりたいことをスプシに書き出す合計100個" id="1ページ毎にやりたいことをスプシに書き出す合計100個">1.ページ毎にやりたいことをスプシに書き出す。合計100個</a></h3>
-<img src="./img/want.png" height="500px">
-<blockquote>
-<p>ページ名の行には書き込まない(後でフォーマットが崩れる)</p>
-</blockquote>
-<h3><a class="header" href="#2作成したやりたいことをコピーしてxmaindにペースト" id="2作成したやりたいことをコピーしてxmaindにペースト">2.作成したやりたいことをコピーして&quot;Xmaind&quot;にペースト</a></h3>
-<img src="./img/Xmaind.png">
-<h3><a class="header" href="#3xmaindでページの階層とコンポーネント毎に並び替え" id="3xmaindでページの階層とコンポーネント毎に並び替え">3.Xmaindでページの階層とコンポーネント毎に並び替え</a></h3>
-<img src="./img/Xmaind002.png">
-<h3><a class="header" href="#4xmaindでmvpを見える化" id="4xmaindでmvpを見える化">4.XmaindでMVPを見える化</a></h3>
-<img src="./img/Xmaind003.png">
-<blockquote>
-<p>初期開発では実装しないものの色をグレーに変更してタグを折りたたんで見やすくする</p>
-</blockquote>
-<h3><a class="header" href="#5ワイヤーフレームを作成単体画面の設計図" id="5ワイヤーフレームを作成単体画面の設計図">5.ワイヤーフレームを作成(単体画面の設計図)</a></h3>
-<p>ワイヤーフレームとは、webページのレイアウトを定める設計図のことです。</p>
-<p>Xmaindで作成した要素をFigmaで配置し、具体化する</p>
-<img src="./img/ワイヤーフレーム.png">
-<blockquote>
-<p>フロントにデザインを一任するなら色、形、画像はここでは入れない</p>
-</blockquote>
-<p>Google Analyticsを連携する場合に守ること</p>
-<p>1.マテリアルデザインを採用する</p>
-<p><a href="https://tayori.com/blog/material-design/">Googleが推奨する「マテリアルデザイン</a></p>
-<p><a href="https://developer.apple.com/jp/app-store/review/guidelines/">Appleのガイドライン</a></p>
-<p><a href="https://www.slideshare.net/mokemokechicken/iosandroidgoodpractice">iOSやAndroidアプリ開発のGoodPractice</a></p>
-<p><a href="https://zenn.dev/basurao/scraps/9a54f3d63cd308">備忘録『iOSアプリ設計パターン入門』</a></p>
-<p>2.アンチパターンの確認</p>
-<p><a href="https://honto.jp/netstore/pd-book_28635072.html">Androidアンチパターン</a></p>
-<p><a href="https://goodpatch.com/blog/appdesign-antipatterns">アンチパターンから考えるアプリケーションデザインの理想形</a></p>
-<h3><a class="header" href="#6サイトマップを作成アプリ全体の設計図" id="6サイトマップを作成アプリ全体の設計図">6.サイトマップを作成(アプリ全体の設計図)</a></h3>
-<p>サイトマップとは、サイト全体のページ構成を地図のように一覧で記載しているページのことです。</p>
-<img src="./img/サイトマップ.png">
-<blockquote>
-<p>PV数を稼ぎたいなら回遊率を上げる設計にする</p>
-</blockquote>
-<p>PVとは、Webサイトで表示されたページの閲覧数を指しています。Webサイト全体や特定のページがどれくらいユーザーに閲覧されたのかを知る指標で、ユーザーが特定のページを閲覧した回数を知ることができます。</p>
-<p>PVのカウントの仕方は非常にシンプルで、Webサイトにアクセスしたユーザーが1ページを閲覧するごとにPVがカウントされ、3ページ見た場合は3PVです。また、ページの更新や「戻る」ボタンによって前ページに戻った場合もカウントに入ります。</p>
-<h3><a class="header" href="#7選定項目の決定" id="7選定項目の決定">7.選定項目の決定</a></h3>
-<p>・技術選定(言語)</p>
-<p>・サーバー選定</p>
-<p>・DB選定</p>
-<blockquote>
-<p>プロジェクトが急ぎの場合はここまで終わればコードが書ける</p>
-</blockquote>
-<h3><a class="header" href="#8ガントチャートの作成" id="8ガントチャートの作成">8.ガントチャートの作成</a></h3>
-<p>ガントチャート（Gantt chart）とは、プロジェクト管理や生産管理などで工程管理に用いられる表のことです。</p>
-<img src="./img/ガントチャート.png">
-<p><a href="https://docs.google.com/spreadsheets/d/1PoZLLxro0nAYeRhapz2jrGL6aeOnTN66JZw260JYpIs/edit#gid=1115838130">ガントチャートテンプレ</a></p>
+                        <h1><a class="header" href="#コーディング" id="コーディング">コーディング</a></h1>
+<h2><a class="header" href="#readmeに記述するもの一覧" id="readmeに記述するもの一覧">readmeに記述するもの一覧</a></h2>
+<p>プロジェクト名
+言語
+技術
+バージョン
+実装方法
+作った経緯
+デプロイ方法（環境）
+使い方(ユーザー目線)</p>
+<h2><a class="header" href="#いいコードの書き方" id="いいコードの書き方">いいコードの書き方</a></h2>
+<p>コードの共通化
+機能をコピペで増やさない
+アプリ全体でコードの共通化(やりながら見極める)
+オブジェクト指向など
+UIロジックのビュー</p>
+<h2><a class="header" href="#コードの分離" id="コードの分離">コードの分離</a></h2>
+<p>ビジネスロジックとUIロジックを混ぜない
+オブジェクト思考の知識が必要
+依存関係の注入</p>
+<h2><a class="header" href="#こまめなリファクタリング" id="こまめなリファクタリング">こまめなリファクタリング</a></h2>
+<p>継続的にリファクタリングして共通化、分離か指定く
+慣れてくると慣れてくるとリファクタリングしながらコードが書ける
+テストを大事にする
+単体テスト
+結合テスト
+総合テスト
+負荷をかけるテスト
+＊コード依存関係を把握するとテストしやすい</p>
+<h2><a class="header" href="#キュー" id="キュー">キュー</a></h2>
+<h3><a class="header" href="#frontendパフォーマンス改善" id="frontendパフォーマンス改善">frontendパフォーマンス改善</a></h3>
+<p>グーグルライトハウスを使う
+ライトハウスCI</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="要求定義.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="詳細設計.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
-                        
-                            <a rel="next" href="基本設計.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -214,15 +185,11 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="要求定義.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="詳細設計.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
-                
-                    <a rel="next" href="基本設計.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </nav>
 
