@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="目次.html">目次</a></li><li class="chapter-item expanded affix "><a href="V字モデル.html">V字モデルとは</a></li><li class="chapter-item expanded "><a href="要求定義.html"><strong aria-hidden="true">1.</strong> 要求定義とは</a></li><li class="chapter-item expanded "><a href="要件定義.html"><strong aria-hidden="true">2.</strong> 要件定義とは</a></li><li class="chapter-item expanded "><a href="基本設計.html" class="active"><strong aria-hidden="true">3.</strong> 基本設計</a></li><li class="chapter-item expanded "><a href="詳細設計.html"><strong aria-hidden="true">4.</strong> 詳細設計</a></li><li class="chapter-item expanded "><a href="コーディング.html"><strong aria-hidden="true">5.</strong> コーディング</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="目次.html">目次</a></li><li class="chapter-item expanded affix "><a href="V字モデル.html">V字モデルとは</a></li><li class="chapter-item expanded "><a href="要求定義.html"><strong aria-hidden="true">1.</strong> 要求定義とは</a></li><li class="chapter-item expanded "><a href="要件定義.html"><strong aria-hidden="true">2.</strong> 要件定義とは</a></li><li class="chapter-item expanded "><a href="基本設計.html" class="active"><strong aria-hidden="true">3.</strong> 基本設計</a></li><li class="chapter-item expanded "><a href="詳細設計.html"><strong aria-hidden="true">4.</strong> 詳細設計</a></li><li class="chapter-item expanded "><a href="コーディング.html"><strong aria-hidden="true">5.</strong> コーディング</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="prisma.html">prismaでDB管理</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -141,6 +141,13 @@
 <blockquote>
 <p>実際に作る時に必要なシステムの詳細を決める。例:アーカイブを難易度順に10個表示</p>
 </blockquote>
+<p>考え方</p>
+<p>機能=Feature(特徴)⇨Function(動き)</p>
+<p>Feature=[決済機能」といったようなざっくりした大きな括り</p>
+<p>Function=より細かいソフトウェアの振る舞い方⇨〈動作主体〉が〈対象〉を〈動作〉する</p>
+<p>〈動作主体〉= ユーザーかシステムか
+〈対象〉= どこに何を(formに名前を)
+〈動作〉= 何をするか(入力する)</p>
 <blockquote>
 <p>function毎にプログラムの実際の処理の流れ、プログラムで扱うデータや流れを決める</p>
 </blockquote>

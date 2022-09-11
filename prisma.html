@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>V字モデルとは - start up</title>
+        <title>prismaでDB管理 - start up</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="目次.html">目次</a></li><li class="chapter-item expanded affix "><a href="V字モデル.html" class="active">V字モデルとは</a></li><li class="chapter-item expanded "><a href="要求定義.html"><strong aria-hidden="true">1.</strong> 要求定義とは</a></li><li class="chapter-item expanded "><a href="要件定義.html"><strong aria-hidden="true">2.</strong> 要件定義とは</a></li><li class="chapter-item expanded "><a href="基本設計.html"><strong aria-hidden="true">3.</strong> 基本設計</a></li><li class="chapter-item expanded "><a href="詳細設計.html"><strong aria-hidden="true">4.</strong> 詳細設計</a></li><li class="chapter-item expanded "><a href="コーディング.html"><strong aria-hidden="true">5.</strong> コーディング</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="prisma.html">prismaでDB管理</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="目次.html">目次</a></li><li class="chapter-item expanded affix "><a href="V字モデル.html">V字モデルとは</a></li><li class="chapter-item expanded "><a href="要求定義.html"><strong aria-hidden="true">1.</strong> 要求定義とは</a></li><li class="chapter-item expanded "><a href="要件定義.html"><strong aria-hidden="true">2.</strong> 要件定義とは</a></li><li class="chapter-item expanded "><a href="基本設計.html"><strong aria-hidden="true">3.</strong> 基本設計</a></li><li class="chapter-item expanded "><a href="詳細設計.html"><strong aria-hidden="true">4.</strong> 詳細設計</a></li><li class="chapter-item expanded "><a href="コーディング.html"><strong aria-hidden="true">5.</strong> コーディング</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="prisma.html" class="active">prismaでDB管理</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -132,31 +132,89 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#v字モデル" id="v字モデル">V字モデル</a></h1>
-<h3><a class="header" href="#v字モデルvモデルv-modelとは" id="v字モデルvモデルv-modelとは">V字モデル（Vモデル・V-Model）とは</a></h3>
-<p>V字モデルとはソフトウェア開発手法の１つであり、主にウォーターフォール型開発において開発工程とテスト工程を詳細さのレベルに応じて対に並べ、各工程の対応関係を明示したモデルです。</p>
-<img src="./img/V-model.png">
-<h3><a class="header" href="#v字モデルを活用する品質面におけるメリット" id="v字モデルを活用する品質面におけるメリット">V字モデルを活用する品質面におけるメリット</a></h3>
-<p>１．適切なテスト内容を決定しやすい</p>
-<p>２．テスト工程の進捗を管理しやすい</p>
-<p>３．前工程の修正作業など「手戻り」リスクの軽減につながる</p>
-<p>４．不具合の修正コストの削減につながる</p>
-<p><a href="https://shiftasia.com/ja/column/v%E5%AD%97%E3%83%A2%E3%83%87%E3%83%AB%E3%81%A8%E3%81%AF/#:%7E:text=V%E5%AD%97%E3%83%A2%E3%83%87%E3%83%AB%E3%81%A8%E3%81%AF%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E9%96%8B%E7%99%BA%E6%89%8B%E6%B3%95%E3%81%AE%EF%BC%91,%E3%82%92%E6%98%8E%E7%A4%BA%E3%81%97%E3%81%9F%E3%83%A2%E3%83%87%E3%83%AB%E3%81%A7%E3%81%99%E3%80%82">参考サイト</a></p>
+                        <h1><a class="header" href="#prismaでdb管理" id="prismaでdb管理">prismaでDB管理</a></h1>
+<p><a href="https://www.prisma.io/">document</a></p>
+<p>目的、 Webで簡単にDB管理をする</p>
+<h3><a class="header" href="#環境" id="環境">環境</a></h3>
+<p>MAMP</p>
+<p>PHPMyadomin</p>
+<h3><a class="header" href="#db管理用のプロジェクトを作成する" id="db管理用のプロジェクトを作成する">DB管理用のプロジェクトを作成する</a></h3>
+<p><a href="https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases-typescript-postgres">document</a>に沿ってプロジェクトを作成する。※必要なさそうなところは省略していくスタイル。</p>
+<p>プロジェクト ディレクトリを作成し、そこに移動します。</p>
+<pre><code class="language-bush">mkdir hello-prisma 
+cd hello-prisma
+</code></pre>
+<p>TypeScript プロジェクトを初期化し、Prisma CLI を開発依存関係として追加</p>
+<pre><code class="language-bush">npm init -y 
+npm install prisma typescript ts-node @types/node --save-dev
+</code></pre>
+<p>Prisma CLI を起動する。(いらないかも)</p>
+<pre><code class="language-bush">npx prisma
+</code></pre>
+<p>次のコマンドを使用してPrismaスキーマファイルを作成し、Prismaプロジェクトをセットアップします。</p>
+<pre><code class="language-bush">npx prisma init
+</code></pre>
+<h3><a class="header" href="#dbと接続するための設定をする" id="dbと接続するための設定をする">DBと接続するための設定をする</a></h3>
+<p><code>hello-prisma/prisma/schema.prisma</code>の内容を変更する</p>
+<p>今回は<code>mysql</code>を使用するため、テキストを変更</p>
+<pre><code class="language-diffprisma">generator client {
+  provider = &quot;prisma-client-js&quot;
+}
+
+datasource db {
+-  provider = &quot;postgresql&quot;
++  provider = &quot;mysql&quot;
+  url      = env(&quot;DATABASE_URL&quot;)
+}
+</code></pre>
+<p>.envファイルの内容を変更する</p>
+<p><a href="https://www.prisma.io/docs/concepts/database-connectors/mysql">参考資料</a></p>
+<pre><code class="language-diff.env">- DATABASE_URL=&quot;postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public&quot;
++ DATABASE_URL=&quot;mysql://masa:masafumidb@localhost:8889/kainusikentei001&quot;
+</code></pre>
+<h3><a class="header" href="#既存のdb情報がない場合dbに格納するデータを設定" id="既存のdb情報がない場合dbに格納するデータを設定">既存のDB情報がない場合⇨DBに格納するデータを設定</a></h3>
+<p>既存のDB情報がない場合</p>
+<p><a href="https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases/using-prisma-migrate-typescript-postgres">参考資料</a></p>
+<p><code>hello-prisma/prisma/schema.prisma</code>に追記する</p>
+<img src="./img/schema001.png">
+<p><code>schema</code>作成後は下記のコマンドを実行するとDBのテーブルが自動で作成される</p>
+<pre><code class="language-bush">npx prisma migrate dev --name init
+</code></pre>
+<p><code>/example-pj/prisma/migrations</code>ディレクトリが作成され、<code>PHPMyadomin</code>にも自動で更新がかかる</p>
+<p>Webブラウザでtableが作成されているか確認する</p>
+<pre><code class="language-bush">npx prisma studio
+</code></pre>
+<h3><a class="header" href="#既存のdb情報がある場合dbから自動作成" id="既存のdb情報がある場合dbから自動作成">既存のDB情報がある場合⇨DBから自動作成</a></h3>
+<p>DB情報をあらかじめエクスポートしてください。</p>
+<p><code>schema</code>を既存のDBから読み取る方法は、<code>hello-prisma/prisma/schema.prisma</code>ファイルと<code>.env</code>ファイルを既存のDBに接続する設定にし、下記のコマンドを実行。</p>
+<pre><code class="language-bush">npx prisma db pull
+</code></pre>
+<p>すると<code>schema.prisma</code>が更新される</p>
+<img src="./img/schema001.png">
+<p>次に、<code>hello-prisma/prisma/schema.prisma</code>ファイルと<code>.env</code>ファイルを新しく作成するDBの接続設定にする。</p>
+<p>変更を確認したら以下のコマンドを実行し、テーブルを自動で作成する</p>
+<pre><code class="language-bush">npx prisma migrate dev --name init
+</code></pre>
+<p><code>/hello-prisma/prisma/migrations/20220911165042_init/migration.sql</code>が自動で作成されるので、事前にエクスポートした<code>sql</code>ファイルの<code>INSERT文</code>をコピペして追加で貼り付ける</p>
+<img src="./img/insert.png">
+<p>最後に、データベースをリセットし、編集した移行を含むすべての移行を再生します。</p>
+<p>上記の作業でデータを復元し、移行が完了します。下記のコマンドを実行</p>
+<pre><code class="language-bush">npx prisma migrate dev
+</code></pre>
+<p>Webブラウザでtableが作成されているか確認する</p>
+<pre><code class="language-bush">npx prisma studio
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="目次.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="コーディング.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
-                        
-                            <a rel="next" href="要求定義.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -166,15 +224,11 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="目次.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="コーディング.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
-                
-                    <a rel="next" href="要求定義.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </nav>
 
