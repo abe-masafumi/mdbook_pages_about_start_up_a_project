@@ -141,6 +141,7 @@
 <li>要件定義とは・・・・・・・・・・・・・・・・<a href="./%E8%A6%81%E4%BB%B6%E5%AE%9A%E7%BE%A9.html">⇨</a></li>
 <li>基本設計とは・・・・・・・・・・・・・・・・<a href="./%E5%9F%BA%E6%9C%AC%E8%A8%AD%E8%A8%88.html">⇨</a></li>
 <li>詳細設計とは・・・・・・・・・・・・・・・・<a href="./%E8%A9%B3%E7%B4%B0%E8%A8%AD%E8%A8%88.html">⇨</a></li>
+<li>prismaでDB管理・・・・・・・・・・・・・・<a href="./prisma.html">⇨</a></li>
 </ol>
 <h1><a class="header" href="#v字モデル" id="v字モデル">V字モデル</a></h1>
 <h3><a class="header" href="#v字モデルvモデルv-modelとは" id="v字モデルvモデルv-modelとは">V字モデル（Vモデル・V-Model）とは</a></h3>
@@ -321,8 +322,10 @@ UIロジックのビュー</p>
 <p><a href="https://www.prisma.io/">document</a></p>
 <p>目的、 Webで簡単にDB管理をする</p>
 <h3><a class="header" href="#環境" id="環境">環境</a></h3>
-<p>MAMP</p>
-<p>PHPMyadomin</p>
+<p>MAMP,XAMPが起動している事を確認</p>
+<p>PHPMyadomin⇨⇨user名、ホスト名、ポートの確認(パスワードは確認できない)</p>
+<img src="./img/MAMP設定.png">
+<p><a href="https://www.javadrive.jp/phpmyadmin/user/index3.html">情報の確認、パスワードの再設定</a></p>
 <h3><a class="header" href="#db管理用のプロジェクトを作成する" id="db管理用のプロジェクトを作成する">DB管理用のプロジェクトを作成する</a></h3>
 <p><a href="https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases-typescript-postgres">document</a>に沿ってプロジェクトを作成する。※必要なさそうなところは省略していくスタイル。</p>
 <p>プロジェクト ディレクトリを作成し、そこに移動します。</p>
@@ -330,10 +333,11 @@ UIロジックのビュー</p>
 cd hello-prisma
 </code></pre>
 <p>TypeScript プロジェクトを初期化し、Prisma CLI を開発依存関係として追加</p>
-<pre><code class="language-bush">npm init -y 
+<pre><code class="language-bush">&lt;!-- package.jsonの作成 --&gt;
+npm init -y 
 npm install prisma typescript ts-node @types/node --save-dev
 </code></pre>
-<p>Prisma CLI を起動する。(いらないかも)</p>
+<p>Prismaで使用できるコマンドが見れる</p>
 <pre><code class="language-bush">npx prisma
 </code></pre>
 <p>次のコマンドを使用してPrismaスキーマファイルを作成し、Prismaプロジェクトをセットアップします。</p>
@@ -382,7 +386,7 @@ datasource db {
 <p>すると<code>schema.prisma</code>が更新される</p>
 <img src="./img/schema001.png">
 <p>次に、<code>hello-prisma/prisma/schema.prisma</code>ファイルと<code>.env</code>ファイルを新しく作成するDBの接続設定にする。</p>
-<p>変更を確認したら以下のコマンドを実行し、テーブルを自動で作成する</p>
+<p>変更を確認したら以下のコマンドを実行し、テーブルを自動で作成する(テーブルのみが生成される)</p>
 <pre><code class="language-bush">npx prisma migrate dev --name init
 </code></pre>
 <p><code>/hello-prisma/prisma/migrations/20220911165042_init/migration.sql</code>が自動で作成されるので、事前にエクスポートした<code>sql</code>ファイルの<code>INSERT文</code>をコピペして追加で貼り付ける</p>
